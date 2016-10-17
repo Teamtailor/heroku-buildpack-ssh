@@ -22,7 +22,6 @@ ENV_DIR=$3
 BUILD_DIR=$1
 SSH_DIR=$BUILD_DIR/.ssh
 
-
 mkdir -p $SSH_DIR/
 chmod 700 $SSH_DIR/
 
@@ -34,4 +33,3 @@ chmod 600 $SSH_DIR/config
 
 mkdir -p "$BUILD_DIR/.profile.d"
 echo "unset -v SSH_KEY" > $BUILD_DIR/.profile.d/unset-ssh-key.sh
-
