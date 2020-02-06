@@ -32,6 +32,3 @@ chmod 400 $SSH_DIR/id_rsa
 
 cp $ENV_DIR/SSH_KNOWN_HOSTS $SSH_DIR/known_hosts
 chmod 400 $SSH_DIR/known_hosts
-
-mkdir -p "$BUILD_DIR/.profile.d"
-echo "unset -v SSH_KEY" > $BUILD_DIR/.profile.d/unset-ssh-key.sh
