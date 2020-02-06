@@ -23,12 +23,25 @@ set -e
 ENV_DIR=$3
 BUILD_DIR=$1
 SSH_DIR=$BUILD_DIR/.ssh
+APP_SSH_DIR=$BUILD_DIR/app/.ssh
 
 mkdir -p $SSH_DIR/
+mkdir -p $APP_SSH_DIR/
 chmod 700 $SSH_DIR/
+chmod 700 $APP_SSH_DIR/
 
+echo "hej 1"
+
+echo "Copying SSH KEY ${SSH_DIR}"
 cp $ENV_DIR/SSH_KEY $SSH_DIR/id_rsa
-chmod 400 $SSH_DIR/id_rsa
+chmod 600 $SSH_DIR/id_rsa
+echo "Copying SSH KEY ${APP_SSH_DIR}"
+cp $ENV_DIR/SSH_KEY $APP_SSH_DIR/id_rsa
+chmod 600 $APP_SSH_DIR/id_rsa
 
+echo "Copying KNOWN_HOSTS ${SSH_DIR}"
 cp $ENV_DIR/SSH_KNOWN_HOSTS $SSH_DIR/known_hosts
-chmod 400 $SSH_DIR/known_hosts
+chmod 600 $SSH_DIR/known_hosts
+echo "Copying KNOWN_HOSTS ${APP_SSH_DIR}"
+cp $ENV_DIR/SSH_KNOWN_HOSTS $APP_SSH_DIR/known_hosts
+chmod 600 $APP_SSH_DIR/known_hosts
