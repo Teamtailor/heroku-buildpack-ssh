@@ -1,10 +1,9 @@
-Heroku Buildpack: SSH
-=====================
+# Heroku Buildpack: SSH
 
 Makes it possible to use SSH in a safe way on your dyno.
 
-Usage
------
+## Usage
+
 Set `SSH_KEY` and `SSH_KNOWN_HOSTS` variables:
 
     heroku config:set SSH_KEY="`cat /path/to/id_rsa`"
@@ -16,9 +15,8 @@ You can have more than one remote server ip-address. You can add them by appendi
 
 This buildpack should be loaded before any buildpacks requiring access to private repositories.
 
-Bugs
-----
+## Bugs
 
-Please report any bugs to using the [issue tracker](https://github.com/barsoom/heroku-buildpack-ssh/issues).
+Please report any bugs to using the [issue tracker](https://github.com/teamtailor/heroku-buildpack-ssh/issues).
 
 Pull requests are welcome.
